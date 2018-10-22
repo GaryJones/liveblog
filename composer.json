@@ -30,7 +30,10 @@
 	"prefer-stable": true,
 	"scripts": {
 		"install-codestandards": "Dealerdirect\\Composer\\Plugin\\Installers\\PHPCodeSniffer\\Plugin::run",
-		"phpcs": "phpcs && phpcs . -sp --standard=WordPressVIPMinimum",
+		"phpcs": "phpcs && @phpcs-vip-minimum",
+		"phpcs-vip-go": "phpcs . --standard=WordPress-VIP-Go -spn --ignore=assets,bin,node_modules,vendor --extensions=php",
+		"phpcs-vip-minimum": "phpcs . --standard=WordPressVIPMinimum -spn --ignore=assets,bin,node_modules,vendor --extensions=php",
+		"phpcs-phpcompatibility": "phpcs . --standard=PHPCompatibility -sp --ignore=assets,bin,node_modules,vendor --extensions=php --runtime-set testVersion 5.6",
 		"test": "phpunit"
 	},
 	"support": {
