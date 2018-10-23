@@ -38,7 +38,7 @@
 	<!-- Rules: WordPress Coding Standards - see
 		https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards -->
 	<rule ref="WordPress-Extra"/><!-- Includes WordPress-Core -->
-	<rule ref="WordPress-Docs"/>
+	<!--<rule ref="WordPress-Docs"/>--><!-- Re-enable once other violations are addressed. -->
 	<!-- For help in understanding these custom sniff properties:
 		https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/wiki/Customizable-sniff-properties -->
 	<config name="minimum_supported_wp_version" value="4.4"/>
@@ -47,8 +47,11 @@
 		<properties>
 			<property name="prefixes" type="array">
 				<element value="liveblog"/>
+				<element value="WPCOM_Liveblog"/>
 			</property>
 		</properties>
+		<exclude-pattern>./templates/</exclude-pattern><!-- This should be a temporary exclusion -->
+		<exclude-pattern>./t/</exclude-pattern><!-- This should be a temporary exclusion -->
 	</rule>
 
 	<rule ref="WordPress.WP.I18n">
